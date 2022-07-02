@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hangman</title>
+  </head>
+  <body>
+    <div>
+      <h2>hangman</h2>
+      <div class="board">
+        <span class="letter"></span>
+        <span class="letter"></span>
+        <span class="letter"></span>
+        <span class="letter"></span>
+        <span class="letter"></span>
+      </div>
+      <p>answer:</p>
+      <p class="word"></p>
+      <div class="control-panel">
+      <button class="getWord">get word</button>
+      <button class="guess">make a guess</button>
+      </div>
+      <div class="choices">
+        <label for="choice">A<input type="radio" name="choice" value="a" /></label>
+        <label for="choice">B<input type="radio" name="choice"  value="b" /></label>
+        <label for="choice">C<input type="radio" name="choice"  value="c" /></label>
+        <label for="choice">D<input type="radio" name="choice"  value="d" /></label>
+        <label for="choice">E<input type="radio" name="choice"  value="e" /></label>
+        <label for="choice">F<input type="radio" name="choice"  value="f" /></label>
+        <label for="choice">G<input type="radio" name="choice"  value="g" /></label>
+        <label for="choice">H<input type="radio" name="choice"  value="h" /></label>
+        <label for="choice">I<input type="radio" name="choice"  value="i" /></label>
+        <label for="choice">J<input type="radio" name="choice"  value="j" /></label>
+        <label for="choice">K<input type="radio" name="choice"  value="k" /></label>
+        <label for="choice">L<input type="radio" name="choice"  value="l" /></label>
+        <label for="choice">M<input type="radio" name="choice"  value="m" /></label>
+        <label for="choice">N<input type="radio" name="choice"  value="n" /></label>
+        <label for="choice">O<input type="radio" name="choice"  value="o" /></label>
+        <label for="choice">P<input type="radio" name="choice"  value="p" /></label>
+        <label for="choice">Q<input type="radio" name="choice"  value="q" /></label>
+        <label for="choice">R<input type="radio" name="choice"  value="r" /></label>
+        <label for="choice">S<input type="radio" name="choice"  value="s" /></label>
+        <label for="choice">T<input type="radio" name="choice"  value="t" /></label>
+        <label for="choice">U<input type="radio" name="choice"  value="u" /></label>
+        <label for="choice">V<input type="radio" name="choice"  value="v" /></label>
+        <label for="choice">W<input type="radio" name="choice"  value="w" /></label>
+        <label for="choice">X<input type="radio" name="choice"  value="x" /></label>
+        <label for="choice">Y<input type="radio" name="choice"  value="y" /></label>
+        <label for="choice">Z<input type="radio" name="choice"  value="z" /></label>
+      </div>
+      <div class="scoreboard">
+        <span>wrong</span>
+        <p class="wrong">0</p>
+        <span>win</span>
+        <p class="win">0</p>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+.letter{
+  display: inline-block;
+  border-bottom: 1px solid red;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  text-align: center;
+  line-height: 30px;
+  size: 20px;
+  color: white;
+}
+
+.control-panel{
+  margin-bottom: 20px;
+}
+
+.choices{
+  margin-bottom: 20px;
+}
+
+.gotU{
+  color: red;
+}
