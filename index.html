@@ -11,45 +11,161 @@
     <div>
       <h2>hangman</h2>
       <div class="board">
-        <span class="letter"></span>
-        <span class="letter"></span>
-        <span class="letter"></span>
-        <span class="letter"></span>
-        <span class="letter"></span>
+        <span class="letter letter1"> </span>
+        <span class="letter letter2"> </span>
+        <span class="letter letter3"> </span>
+        <span class="letter letter4"> </span>
+        <span class="letter letter5"> </span>
       </div>
-      <p>answer:</p>
-      <p class="word"></p>
+      <!-- <p>answer:</p>
+      <p class="word"></p> -->
       <div class="control-panel">
-      <button class="getWord">get word</button>
-      <button class="guess">make a guess</button>
+        <button class="getWord">START GAME</button>
+        <!-- <button class="guess">MAKE A GUESS</button> -->
       </div>
       <div class="choices">
-        <label for="choice">A<input type="radio" name="choice" value="a" /></label>
-        <label for="choice">B<input type="radio" name="choice"  value="b" /></label>
-        <label for="choice">C<input type="radio" name="choice"  value="c" /></label>
-        <label for="choice">D<input type="radio" name="choice"  value="d" /></label>
-        <label for="choice">E<input type="radio" name="choice"  value="e" /></label>
-        <label for="choice">F<input type="radio" name="choice"  value="f" /></label>
-        <label for="choice">G<input type="radio" name="choice"  value="g" /></label>
-        <label for="choice">H<input type="radio" name="choice"  value="h" /></label>
-        <label for="choice">I<input type="radio" name="choice"  value="i" /></label>
-        <label for="choice">J<input type="radio" name="choice"  value="j" /></label>
-        <label for="choice">K<input type="radio" name="choice"  value="k" /></label>
-        <label for="choice">L<input type="radio" name="choice"  value="l" /></label>
-        <label for="choice">M<input type="radio" name="choice"  value="m" /></label>
-        <label for="choice">N<input type="radio" name="choice"  value="n" /></label>
-        <label for="choice">O<input type="radio" name="choice"  value="o" /></label>
-        <label for="choice">P<input type="radio" name="choice"  value="p" /></label>
-        <label for="choice">Q<input type="radio" name="choice"  value="q" /></label>
-        <label for="choice">R<input type="radio" name="choice"  value="r" /></label>
-        <label for="choice">S<input type="radio" name="choice"  value="s" /></label>
-        <label for="choice">T<input type="radio" name="choice"  value="t" /></label>
-        <label for="choice">U<input type="radio" name="choice"  value="u" /></label>
-        <label for="choice">V<input type="radio" name="choice"  value="v" /></label>
-        <label for="choice">W<input type="radio" name="choice"  value="w" /></label>
-        <label for="choice">X<input type="radio" name="choice"  value="x" /></label>
-        <label for="choice">Y<input type="radio" name="choice"  value="y" /></label>
-        <label for="choice">Z<input type="radio" name="choice"  value="z" /></label>
+        <div class="choice">
+          <input type="radio" name="choice" value="a" id="a" disabled/><label for="a"
+            >A</label
+          >
+        </div>
+        <div class="choice">
+          <input type="radio" name="choice" value="b" id="b" disabled/><label for="b"
+            >B</label
+          >
+        </div>
+        <div class="choice">
+          <input type="radio" name="choice" value="c" id="c" disabled/><label for="c"
+            >C</label
+          >
+        </div>
+        <div class="choice">
+          <input type="radio" name="choice" value="d" id="d" disabled/><label for="d"
+            >D</label
+          >
+        </div>
+        <div class="choice">
+          <input type="radio" name="choice" value="e" id="e" disabled/><label for="e"
+            >E</label
+          >
+        </div>
+        <div class="choice">
+          <input type="radio" name="choice" value="f" id="f" disabled/><label for="f"
+            >F</label
+          >
+        </div>
+        <div class="choice">
+          <input type="radio" name="choice" value="g" id="g" disabled/><label for="g"
+            >G</label
+          >
+        </div>
+        <div class="choice">
+          <input type="radio" name="choice" value="h" id="h" disabled/><label for="h"
+            >H</label
+          >
+        </div>
+        <div class="choice">
+          <input type="radio" name="choice" value="i" id="i" disabled/><label for="i"
+            >I</label
+          >
+        </div>
+        <div class="choice">
+          <input type="radio" name="choice" value="j" id="j" disabled/>
+          <label for="j">J</label>
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="k" id="k" disabled/><label for="k"
+            >K</label
+          >
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="l" id="l" disabled/><label for="l"
+            >L</label
+          >
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="m" id="m" disabled/><label for="m"
+            >M</label
+          >
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="n" id="n" disabled/><label for="n"
+            >N</label
+          >
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="o" id="o" disabled/><label for="o"
+            >O</label
+          >
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="p" id="p" disabled/>
+          <label for="p">P</label>
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="q" id="q" disabled/><label for="q"
+            >Q</label
+          >
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="r" id="r" disabled/><label for="r"
+            >R</label
+          >
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="s" id="s" disabled/><label for="s"
+            >S</label
+          >
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="t" id="t" disabled/><label for="t"
+            >T</label
+          >
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="u" id="u" disabled/><label for="u"
+            >U</label
+          >
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="v" id="v" disabled/><label for="v"
+            >V</label
+          >
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="w" id="w" disabled/><label for="w"
+            >W</label
+          >
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="x" id="x" disabled/>
+          <label for="x">X</label>
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="y" id="y" disabled/>
+          <label for="y">Y</label>
+        </div>
+
+        <div class="choice">
+          <input type="radio" name="choice" value="z" id="z" disabled /><label for="z"
+            >Z</label
+          >
+        </div>
       </div>
       <div class="scoreboard">
         <span>wrong</span>

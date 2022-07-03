@@ -1,3 +1,8 @@
+.board{
+  display: flex;
+  margin-bottom: 20px;
+}
+
 .letter{
   display: inline-block;
   border-bottom: 1px solid red;
@@ -6,8 +11,7 @@
   margin-right: 5px;
   text-align: center;
   line-height: 30px;
-  size: 20px;
-  color: white;
+  size: 30px;
 }
 
 .control-panel{
@@ -16,7 +20,36 @@
 
 .choices{
   margin-bottom: 20px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
 }
+
+
+label{
+  display: inline-block;
+  width: 20px;
+  border: 1px solid #444;
+;
+  text-align: center;
+}
+
+input{
+  display: none;
+}
+
+input:disabled ~label{
+  background: rgb(133, 4, 4);
+}
+
+label:hover{
+  background-color: aqua;
+}
+
+/* input:checked ~label{
+  color: yellow;
+  background-color: #444;
+} */
 
 .gotU{
   color: red;
