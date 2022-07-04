@@ -12,6 +12,9 @@ body{
   margin-bottom: 20px;
 }
 
+.definition-wrapper{
+  margin-bottom: 20px;
+}
 .letter{
   display: inline-block;
   border-bottom: 1px solid red;
