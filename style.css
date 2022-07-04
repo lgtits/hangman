@@ -1,21 +1,22 @@
-body{
+body {
   display: flex;
   justify-content: center;
 }
 
-.container{
+.container {
   width: 80%;
 }
 
-.board{
+.board {
   display: flex;
   margin-bottom: 20px;
 }
 
-.definition-wrapper{
+.definition-wrapper {
   margin-bottom: 20px;
 }
-.letter{
+
+.letter {
   display: inline-block;
   border-bottom: 1px solid red;
   width: 50px;
@@ -26,45 +27,52 @@ body{
   size: 50px;
 }
 
-.control-panel{
+.control-panel {
   margin-bottom: 20px;
 }
 
-.choices{
+.choices {
   margin-bottom: 20px;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-
-label{
+label {
   display: inline-block;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
   border: 1px solid #444;
-;
   text-align: center;
 }
 
-input{
+input {
   display: none;
 }
 
-input:disabled ~label{
+input:disabled ~ label {
   background: rgb(133, 4, 4);
 }
 
-label:hover{
+label:hover {
   background-color: aqua;
 }
 
-/* input:checked ~label{
-  color: yellow;
-  background-color: #444;
-} */
-
-.gotU{
+.gotU {
   color: red;
+}
+
+.status-picture1 {
+  width: 100px;
+  height: 100px;
+}
+.status-picture1,
+.status-picture2,
+.status-picture3,
+.status-picture4,
+.status-picture5,
+.status-picture6 {
+  display: none;
 }
