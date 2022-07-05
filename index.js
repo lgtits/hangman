@@ -10,24 +10,26 @@ const inputs = document.querySelectorAll("input");
 const labels = document.querySelectorAll("label");
 const wrong = document.querySelector(".wrong");
 const win = document.querySelector(".win");
+const lose = document.querySelector(".lose");
 const description = document.querySelector(".description");
 const vocabularies = document.querySelector(".vocabularies");
+const pictures = document.querySelectorAll(".status");
 let definitionDescription;
 let answer;
 let split;
 let wrongTime = 0;
 let correct = 0;
 let winTime = 0;
+let loseTime = 0;
 let processing = false;
 
 let url = "https://random-word-api.herokuapp.com/word?length=5";
 
 async function getData(url) {
   console.log("game starts");
+  pictures.forEach((element) => element.classList.remove("show"));
   processing = true;
-
   if (answer) {
-    console.log(answer);
     vocabularies.innerHTML += `<li>
       <span class="vocabulary">${answer}: </span>
       <span class="meaning">${definitionDescription}</span>
@@ -59,22 +61,17 @@ async function getData(url) {
 }
 
 async function getDefinition(word) {
-  console.log("get definition of:", word);
   try {
     let response = await fetch(
       `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
     );
     let definition = await response.json();
-    console.log(
-      "definition:",
-      definition[0].meanings[0].definitions[0].definition
-    );
     definitionDescription = definition[0].meanings[0].definitions[0].definition;
     description.innerText = definitionDescription;
     processing = false;
   } catch (error) {
     console.log("Error:", error);
-    answer = ''
+    answer = "";
     getData(url);
     // definitionDescription = "no definition.";
     // description.innerText = definitionDescription;
@@ -121,11 +118,14 @@ function check(letter) {
     labels[letter.charCodeAt(0) - 97].setAttribute("disabled", true);
   }
   if (correct === 5) {
-    alert(`Bingo！ Answer is ${answer}.`);
+    alert(`Yes! Answer is ${answer}.`);
     correct = 0;
     getData(url);
-    winTime++;
-    win.innerText = winTime;
+    if (wrongTime < 9) {
+      winTime++;
+      win.innerText = winTime;
+      console.log('you win')
+    }
   }
   if (
     split[0] !== letter &&
@@ -138,12 +138,13 @@ function check(letter) {
     labels[letter.charCodeAt(0) - 97].setAttribute("disabled", true);
     wrongTime++;
     wrong.innerText = wrongTime;
+    getPicture(wrongTime);
   }
 }
 
 labels.forEach((label) => {
   label.addEventListener("click", function (e) {
-    if (!answer) {
+    if (!answer || processing) {
       return;
     }
     if (e.target.getAttribute("disabled")) {
@@ -153,3 +154,19 @@ labels.forEach((label) => {
     check(letter);
   });
 });
+
+function getPicture(wrongTime) {
+  for (let i = 0; i <= 9; i++)
+    if (wrongTime === i) {
+      pictures[i - 1].classList.add("show");
+      if (i > 1) {
+        pictures[i - 2].classList.remove("show");
+      }
+      if (wrongTime === 9) {
+        console.log("you lose");
+        alert("you lose !");
+        loseTime++;
+        lose.innerText = loseTime;
+      }
+    }
+}
