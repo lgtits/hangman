@@ -1,4 +1,4 @@
-const getWord = document.querySelector(".getWord");
+const startBtn = document.querySelector(".start-btn");
 const board = document.querySelector(".board");
 const letters = document.querySelectorAll(".letter");
 const letter1 = document.querySelector(".letter1");
@@ -8,7 +8,6 @@ const letter4 = document.querySelector(".letter4");
 const letter5 = document.querySelector(".letter5");
 const inputs = document.querySelectorAll("input");
 const labels = document.querySelectorAll("label");
-const wrong = document.querySelector(".wrong");
 const win = document.querySelector(".win");
 const lose = document.querySelector(".lose");
 const description = document.querySelector(".description");
@@ -53,7 +52,6 @@ async function getData(url) {
       item.removeAttribute("disabled");
     });
     wrongTime = 0;
-    wrong.innerText = wrongTime;
     getDefinition(answer);
   } catch (error) {
     console.log(error);
@@ -79,7 +77,7 @@ async function getDefinition(word) {
   }
 }
 
-getWord.addEventListener("click", function () {
+startBtn.addEventListener("click", function () {
   if (processing === true) {
     return;
   }
@@ -137,7 +135,6 @@ function check(letter) {
     inputs[letter.charCodeAt(0) - 97].setAttribute("disabled", true);
     labels[letter.charCodeAt(0) - 97].setAttribute("disabled", true);
     wrongTime++;
-    wrong.innerText = wrongTime;
     getPicture(wrongTime);
   }
 }
