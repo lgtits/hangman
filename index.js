@@ -28,6 +28,7 @@ async function getData(url) {
   console.log("game starts");
   pictures.forEach((element) => element.classList.remove("show"));
   processing = true;
+  startBtn.innerText = 'Loading...'
   if (answer) {
     vocabularies.innerHTML += `<li>
       <span class="vocabulary">${answer}: </span>
@@ -67,6 +68,7 @@ async function getDefinition(word) {
     definitionDescription = definition[0].meanings[0].definitions[0].definition;
     description.innerText = definitionDescription;
     processing = false;
+      startBtn.innerText = "Start Game";
   } catch (error) {
     console.log("Error:", error);
     answer = "";
