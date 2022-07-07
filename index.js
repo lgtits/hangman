@@ -28,13 +28,14 @@ async function getData(url) {
   console.log("game starts");
   pictures.forEach((element) => element.classList.remove("show"));
   processing = true;
-  startBtn.innerText = 'Loading...'
-  if (answer) {
-    vocabularies.innerHTML += `<li>
-      <span class="vocabulary">${answer}: </span>
-      <span class="meaning">${definitionDescription}</span>
-    </li>`;
-  }
+  startBtn.innerText = "Loading...";
+description.innerText = "Loading...";
+  // if (answer) {
+  //   vocabularies.innerHTML += `<li>
+  //     <span class="vocabulary">${answer}: </span>
+  //     <span class="meaning">${definitionDescription}</span>
+  //   </li>`;
+  // }
   try {
     let response = await fetch(url);
     let data = await response.json();
@@ -65,17 +66,17 @@ async function getDefinition(word) {
       `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
     );
     let definition = await response.json();
-    definitionDescription = definition[0].meanings[0].definitions[0].definition;
+    let partOfSpeech = definition[0].meanings[0].partOfSpeech;
+    definitionDescription =
+      `(${partOfSpeech}) ` +
+      definition[0].meanings[0].definitions[0].definition;
     description.innerText = definitionDescription;
     processing = false;
-      startBtn.innerText = "Start Game";
+    startBtn.innerText = "Start Game";
   } catch (error) {
     console.log("Error:", error);
     answer = "";
     getData(url);
-    // definitionDescription = "no definition.";
-    // description.innerText = definitionDescription;
-    // processing = false;
   }
 }
 
@@ -124,7 +125,7 @@ function check(letter) {
     if (wrongTime < 9) {
       winTime++;
       win.innerText = winTime;
-      console.log('you win')
+      console.log("you win");
     }
   }
   if (

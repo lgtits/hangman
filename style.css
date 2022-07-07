@@ -114,3 +114,12 @@ label:hover {
   display: flex;
   justify-content: center;
 }
+
+a:link {
+  text-decoration: none;
+  color: gray;
+}
+
+a:visited {
+  color: gray;
+}
