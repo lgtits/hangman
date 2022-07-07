@@ -30,12 +30,12 @@ async function getData(url) {
   processing = true;
   startBtn.innerText = "Loading...";
 description.innerText = "Loading...";
-  // if (answer) {
-  //   vocabularies.innerHTML += `<li>
-  //     <span class="vocabulary">${answer}: </span>
-  //     <span class="meaning">${definitionDescription}</span>
-  //   </li>`;
-  // }
+  if (answer) {
+    vocabularies.innerHTML += `<li>
+      <span class="vocabulary">${answer}: </span>
+      <span class="meaning">${definitionDescription}</span>
+    </li>`;
+  }
   try {
     let response = await fetch(url);
     let data = await response.json();
